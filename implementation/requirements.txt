@@ -1,0 +1,14 @@
+# Python dependencies for the Forensic AI service
+# Installs the CPU build of PyTorch from the official index.
+# (If you have an NVIDIA GPU and want CUDA, replace the torch line per
+#  https://pytorch.org/get-started/locally/ instead.)
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch==2.10.0
+transformers==5.2.0
+fastapi==0.133.1
+uvicorn[standard]==0.41.0
+pillow==12.1.1
+python-multipart
+pydantic==2.12.5
+safetensors==0.7.0

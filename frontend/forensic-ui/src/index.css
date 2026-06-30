@@ -1,0 +1,75 @@
+:root {
+  /* Forensic / law-enforcement dark palette */
+  --bg-deep: #0f1626;
+  --bg-sidebar: #1a1a2e;
+  --bg-main: #16213e;
+  --bg-card: #1d2b4d;
+  --bg-input: #0f1b33;
+  --accent: #0f3460;
+  --accent-bright: #2e8bc0;
+  --accent-cyan: #21d4fd;
+  --danger: #e84545;
+  --text: #e6ecf5;
+  --text-muted: #8a98b8;
+  --border: #2a3a5e;
+
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg-deep);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 0.4em 0;
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.small {
+  font-size: 12px;
+}

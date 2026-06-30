@@ -1,0 +1,19 @@
+# GPU (CUDA) dependencies for the Forensic AI service.
+# Use this INSTEAD of requirements.txt on machines with an NVIDIA GPU
+# (e.g., RTX 3060) and a recent driver. It installs the CUDA 12.8 build of
+# PyTorch so the models run on the GPU instead of the CPU.
+#
+#   pip install -r requirements-gpu.txt
+#
+# If your NVIDIA driver is older, swap cu128 for cu126 in the line below.
+--index-url https://download.pytorch.org/whl/cu128
+--extra-index-url https://pypi.org/simple
+
+torch==2.10.0
+transformers==5.2.0
+fastapi==0.133.1
+uvicorn[standard]==0.41.0
+pillow==12.1.1
+python-multipart
+pydantic==2.12.5
+safetensors==0.7.0

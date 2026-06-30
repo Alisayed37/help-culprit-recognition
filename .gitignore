@@ -1,0 +1,40 @@
+# ===================== .NET =====================
+bin/
+obj/
+*.user
+
+# ===================== Node / React =====================
+node_modules/
+dist/
+.vite/
+
+# ===================== Python =====================
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# ============ Large model weights & vectors ============
+# These exceed GitHub's 100 MB per-file limit (the repo holds the CODE, not the
+# trained weights). Document where to obtain them in SETUP.md / README.
+implementation/models/
+*.safetensors
+*.pth
+*.pt
+
+# ============ Uploaded evidence images & generated data ============
+backend/ForensicApi/InvestigationData/
+implementation/investigation_data/
+
+# ===================== Build / scratch artifacts =====================
+docs-build/node_modules/
+docs-build/poster_unpack/
+docs-build/poster_png/
+docs-build/slides_png/
+docs-build/tmpl_png/
+
+# ===================== OS / editor =====================
+.DS_Store
+Thumbs.db
+.vs/
+.idea/
