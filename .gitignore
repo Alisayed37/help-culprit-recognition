@@ -38,3 +38,11 @@ docs-build/tmpl_png/
 Thumbs.db
 .vs/
 .idea/
+
+# ===================== Deliverables & build workspace =====================
+# Kept outside the repo (submitted separately). Not part of the source code.
+docs-build/
+*.docx
+*.pptx
+project_banner*.png
+reset-mysql-root.sql
