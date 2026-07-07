@@ -17,10 +17,10 @@ REM ---------- 1. Check prerequisites ----------
 echo [1/5] Checking required tools...
 set MISSING=0
 
-where dotnet >nul 2>&1 || (echo   [X] .NET SDK not found  -> https://dotnet.microsoft.com/download/dotnet/8.0 & set MISSING=1)
-where python >nul 2>&1 || (echo   [X] Python not found     -> https://www.python.org/downloads/ & set MISSING=1)
-where node   >nul 2>&1 || (echo   [X] Node.js not found    -> https://nodejs.org/ & set MISSING=1)
-where mysql  >nul 2>&1 || (echo   [!] mysql CLI not on PATH ^(MySQL may still be installed^) -> https://dev.mysql.com/downloads/installer/)
+where dotnet >nul 2>&1 || (echo   [X] .NET SDK not found  - see: https://dotnet.microsoft.com/download/dotnet/8.0 & set MISSING=1)
+where python >nul 2>&1 || (echo   [X] Python not found     - see: https://www.python.org/downloads/ & set MISSING=1)
+where node   >nul 2>&1 || (echo   [X] Node.js not found    - see: https://nodejs.org/ & set MISSING=1)
+where mysql  >nul 2>&1 || (echo   [!] mysql CLI not on PATH ^(MySQL may still be installed^) - see: https://dev.mysql.com/downloads/installer/)
 
 if "%MISSING%"=="1" (
     echo.
@@ -33,7 +33,7 @@ echo.
 
 REM ---------- 2. Python dependencies ----------
 echo [2/5] Installing Python packages ^(this can take several minutes^)...
-cd /d %ROOT%implementation
+cd /d "%ROOT%implementation"
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 if errorlevel 1 (echo   [X] Python install failed. & pause & exit /b 1)
@@ -42,7 +42,7 @@ echo.
 
 REM ---------- 3. Frontend dependencies ----------
 echo [3/5] Installing React/Node packages...
-cd /d %ROOT%frontend\forensic-ui
+cd /d "%ROOT%frontend\forensic-ui"
 call npm install
 if errorlevel 1 (echo   [X] npm install failed. & pause & exit /b 1)
 echo   [OK] Frontend packages installed.
@@ -50,7 +50,7 @@ echo.
 
 REM ---------- 4. Backend restore ----------
 echo [4/5] Restoring .NET packages...
-cd /d %ROOT%backend\ForensicApi
+cd /d "%ROOT%backend\ForensicApi"
 dotnet restore
 if errorlevel 1 (echo   [X] dotnet restore failed. & pause & exit /b 1)
 echo   [OK] Backend packages restored.
