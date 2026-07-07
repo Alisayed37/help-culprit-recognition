@@ -17,7 +17,7 @@ REM ---------- 1. Check prerequisites ----------
 echo [1/5] Checking required tools...
 set MISSING=0
 
-where dotnet >nul 2>&1 || (echo   [X] .NET SDK not found  - see: https://dotnet.microsoft.com/download/dotnet/8.0 & set MISSING=1)
+dotnet --list-sdks 2>nul | findstr /r "[0-9]" >nul || (echo   [X] .NET 8 SDK not found ^(install the SDK, not just the Runtime^)  - see: https://dotnet.microsoft.com/download/dotnet/8.0 & set MISSING=1)
 where python >nul 2>&1 || (echo   [X] Python not found     - see: https://www.python.org/downloads/ & set MISSING=1)
 where node   >nul 2>&1 || (echo   [X] Node.js not found    - see: https://nodejs.org/ & set MISSING=1)
 where mysql  >nul 2>&1 || (echo   [!] mysql CLI not on PATH ^(MySQL may still be installed^) - see: https://dev.mysql.com/downloads/installer/)
